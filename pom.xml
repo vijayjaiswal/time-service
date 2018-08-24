@@ -34,7 +34,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>vijayjaiswalvictory/k8s-images</docker.image.prefix>
+		<docker.image.prefix>vijayjaiswalvictory</docker.image.prefix>
 	</properties>
 	<build>
 		<plugins>
@@ -63,10 +63,21 @@
 				<version>1.3.6</version>
 				<configuration>
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
+					<tag>${project.version}</tag>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
 				</configuration>
+				<executions>
+					<execution>
+						<id>default</id>
+						<phase>install</phase>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
