@@ -38,8 +38,6 @@
 	</properties>
 	<build>
 		<plugins>
-			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
-				</plugin> -->
 			<plugin>
 				<!-- Build an executable JAR -->
 				<groupId>org.apache.maven.plugins</groupId>
@@ -62,8 +60,7 @@
 				<configuration>
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
 					<username>vijayjaiswalvictory</username>
-					<password>XXXX</password>
-					<!-- <repository>${docker.image.prefix}/${project.artifactId}</repository> -->
+					<password>XXXXX</password>
 					<tag>${project.version}</tag>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
