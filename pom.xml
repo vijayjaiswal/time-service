@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vijay.rnd.service</groupId>
-	<artifactId>TimeService</artifactId>
+	<artifactId>time-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,10 +38,8 @@
 	</properties>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+				</plugin> -->
 			<plugin>
 				<!-- Build an executable JAR -->
 				<groupId>org.apache.maven.plugins</groupId>
@@ -60,9 +58,12 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.3.6</version>
+				<version>1.4.4</version>
 				<configuration>
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
+					<username>vijayjaiswalvictory</username>
+					<password>XXXX</password>
+					<!-- <repository>${docker.image.prefix}/${project.artifactId}</repository> -->
 					<tag>${project.version}</tag>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
